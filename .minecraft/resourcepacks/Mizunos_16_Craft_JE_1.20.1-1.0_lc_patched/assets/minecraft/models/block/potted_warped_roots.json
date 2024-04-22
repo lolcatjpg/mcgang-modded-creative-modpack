@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/flower_pot_cross_0",
+  "textures": {
+    "plant": "minecraft:block/warped_roots_pot",
+    "flowerpot": "block/flower_pot_0",
+	"dirt": "block/warped_nylium"
+  }
+}

@@ -1,0 +1,18 @@
+{
+    "options.off": "§cخاموش",
+    "options.on": "§aروشن",
+    "options.difficulty.peaceful": "§bصلح آميز",
+    "options.difficulty.easy": "§aآسان",
+    "options.difficulty.normal": "§eعادی",
+    "options.difficulty.hard": "§cسخت",
+    "options.clouds.fancy": "§aتجملی",
+    "options.clouds.fast": "§eبهينه",
+    "options.graphics.fabulous": "§dشگفت آور!",
+    "options.graphics.fancy": "§aتجملی",
+    "options.graphics.fast": "§eبهينه",
+    "options.narrator.all": "§aخواندن همه",
+    "options.narrator.chat": "§aخواندن متن گفت و گو",
+    "options.narrator.system": "§aخواندن متن سیستمی",
+    "options.narrator.notavailable": "§aدر دسترس نيست",
+    "options.narrator.off": "§cخاموش"
+}

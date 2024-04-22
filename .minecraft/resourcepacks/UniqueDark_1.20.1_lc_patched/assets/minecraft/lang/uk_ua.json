@@ -1,0 +1,18 @@
+{
+	"options.off": "§cВимк.",
+	"options.on": "§aУвімк.",
+	"options.difficulty.peaceful": "§bМирна",
+	"options.difficulty.easy": "§aЛегка",
+	"options.difficulty.normal": "§eНормальна",
+	"options.difficulty.hard": "§cСкладна",
+	"options.clouds.fancy": "§aОб’ємні",
+	"options.clouds.fast": "§eШвидкі",
+	"options.graphics.fabulous": "§dКазкова!",
+	"options.graphics.fancy": "§aКрасива",
+	"options.graphics.fast": "§eШвидка",
+	"options.narrator.all": "§aОзвучує все",
+	"options.narrator.chat": "§aОзвучує чат",
+	"options.narrator.system": "§aОзвучує систему",
+	"options.narrator.notavailable": "§cНедоступно",
+	"options.narrator.off": "§cВИМК."
+}

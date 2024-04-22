@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/flower_pot_cross_0",
+  "textures": {
+    "plant": "minecraft:block/torchflower",
+    "flowerpot": "block/flower_pot_2",
+	"dirt": "block/dirt"
+  }
+}

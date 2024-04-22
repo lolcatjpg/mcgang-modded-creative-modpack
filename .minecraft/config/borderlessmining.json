@@ -1,0 +1,14 @@
+{
+  "enableBorderlessFullscreen": false,
+  "addToVanillaVideoSettings": false,
+  "enableMacOS": false,
+  "customWindowDimensions": {
+    "enabled": true,
+    "x": 0,
+    "y": 0,
+    "width": 1920,
+    "height": 1080,
+    "useMonitorCoordinates": false
+  },
+  "forceWindowMonitor": 1
+}

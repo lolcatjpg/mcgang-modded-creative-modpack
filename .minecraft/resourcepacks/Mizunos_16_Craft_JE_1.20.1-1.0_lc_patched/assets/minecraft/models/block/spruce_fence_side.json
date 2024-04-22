@@ -1,0 +1,40 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"particle": "block/fence/fence_spruce"
+	},
+	"elements": [
+		{
+			"from": [7, 12, 0],
+			"to": [9, 15, 9],
+			"faces": {
+				"north": {"uv": [2, 1, 4, 4], "texture": "#particle"},
+				"east": {"uv": [7, 1, 16, 4], "texture": "#particle"},
+				"west": {"uv": [0, 1, 9, 4], "texture": "#particle"},
+				"up": {"uv": [0, 1, 9, 3], "rotation": 90, "texture": "#particle"},
+				"down": {"uv": [0, 2, 9, 4], "rotation": 270, "texture": "#particle"}
+			}
+		},
+		{
+			"from": [7, 2, 0],
+			"to": [9, 5, 9],
+			"faces": {
+				"north": {"uv": [2, 11, 4, 14], "texture": "#particle"},
+				"east": {"uv": [9, 1, 0, 4], "texture": "#particle"},
+				"west": {"uv": [0, 11, 9, 14], "texture": "#particle"},
+				"up": {"uv": [0, 11, 9, 13], "rotation": 90, "texture": "#particle"},
+				"down": {"uv": [0, 12, 9, 14], "rotation": 270, "texture": "#particle"}
+			}
+		},
+		{
+			"from": [7.5, 4, 2],
+			"to": [8.5, 13, 4],
+			"faces": {
+				"north": {"uv": [2, 3, 3, 12], "texture": "#particle"},
+				"east": {"uv": [2, 3, 4, 12], "texture": "#particle"},
+				"south": {"uv": [3, 3, 4, 12], "texture": "#particle"},
+				"west": {"uv": [2, 3, 4, 12], "texture": "#particle"}
+			}
+		}
+	]
+}
