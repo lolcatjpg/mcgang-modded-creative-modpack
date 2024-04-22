@@ -1,8 +1,0 @@
-{
-    "parent": "block/flower_pot_cross_0",
-    "textures": {
-        "plant": "block/brown_mushroom",
-    "flowerpot": "block/flower_pot_1",
-	"dirt": "block/podzol_top"
-    }
-}

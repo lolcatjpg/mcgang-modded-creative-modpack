@@ -1,3 +1,5 @@
+.git/logs
+.git/objects
 .minecraft/XaeroWaypoints
 .minecraft/XaeroWaypoints_BACKUP032021
 .minecraft/XaeroWorldMap
@@ -6,8 +8,11 @@
 .minecraft/realms_persistence.json
 .minecraft/resourcepacks/Mineseprite UI - Dark Mode - 1.1.zip
 .minecraft/resourcepacks/Mizunos 16 Craft JE_1.19.4-1.0_lc_custom.zip
+.minecraft/resourcepacks/Mizunos 16 Craft JE_1.19.4-1.0_lc_custom.zip.disabled
 .minecraft/resourcepacks/Mizunos 16 Craft JE_1.20.1-1.0.zip
+.minecraft/resourcepacks/Mizunos 16 Craft JE_1.20.1-1.0.zip.disabled
 .minecraft/resourcepacks/UniqueDark_1.20.1.zip
+.minecraft/resourcepacks/UniqueDark_1.20.1.zip.disabled
 .minecraft/resourcepacks/folder
 .minecraft/saves
 .minecraft/schematics
@@ -18,3 +23,4 @@
 .minecraft/texturepacks
 .minecraft/usercache.json
 .minecraft/usernamecache.json
+instance.cfg

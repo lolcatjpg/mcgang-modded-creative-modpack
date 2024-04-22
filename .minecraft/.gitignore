@@ -7,8 +7,8 @@
 
 !resourcepacks/
 resourcepacks/*
-!resourcepacks/UniqueDark_1.20.1_lc_patched/
-!resourcepacks/Mizunos_16_Craft_JE_1.20.1-1.0_lc_patched/
+!resourcepacks/UniqueDark_1.20.1_lc_patched.zip
+!resourcepacks/Mizunos_16_Craft_JE_1.20.1-1.0_lc_patched.zip
 # https://stackoverflow.com/a/29932318
 
 !.gitignore
