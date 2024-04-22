@@ -1,0 +1,14 @@
+name = "Rubidium"
+filename = "rubidium-mc1.20.1-0.7.1.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/4ZqxOvjD/versions/VKligEsm/rubidium-mc1.20.1-0.7.1.jar"
+hash-format = "sha512"
+hash = "01d73f91e98c5981eb81c7d0a57ab944988108af04781778e1b48a8e4bf35d68091364f65c94f38a903aff09921312118715493f412de916971663f39cf81bce"
+
+[update]
+[update.modrinth]
+mod-id = "4ZqxOvjD"
+version = "VKligEsm"

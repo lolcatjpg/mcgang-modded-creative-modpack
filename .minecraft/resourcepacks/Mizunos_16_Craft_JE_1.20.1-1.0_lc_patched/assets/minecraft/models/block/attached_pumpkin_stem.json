@@ -1,0 +1,9 @@
+{
+    "parent": "block/stem_fruit_0",
+    "textures": {
+        "0": "block/pumpkin_stem",
+        "1": "block/attached_pumpkin_stem",
+		"2": "block/pumpkin_stem_0",
+		"3": "block/pumpkin_stem_1"
+    }
+}

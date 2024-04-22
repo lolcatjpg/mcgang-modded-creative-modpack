@@ -1,0 +1,6 @@
+FPS: &a{fps}&r/{max_fps}
+Location: &c{bx} &a{by} &b{bz}
+Facing: &a{facing}
+
+==Section:BottomLeft==
+{real_time:HH:mm}

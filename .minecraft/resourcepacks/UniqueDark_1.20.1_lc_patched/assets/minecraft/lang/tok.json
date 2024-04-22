@@ -1,0 +1,18 @@
+{
+	"options.off": "§cala",
+	"options.on": "§awile",
+	"options.difficulty.peaceful": "§bmonsuta ala",
+	"options.difficulty.easy": "§aike ala",
+	"options.difficulty.normal": "§eike lili",
+	"options.difficulty.hard": "§cike mute",
+	"options.clouds.fancy": "§apona lukin",
+	"options.clouds.fast": "§epona tawa ilo",
+	"options.graphics.fabulous": "§dpona lukin a!",
+	"options.graphics.fancy": "§apona lukin",
+	"options.graphics.fast": "§epona tawa ilo",
+	"options.narrator.all": "§aale",
+	"options.narrator.chat": "§atoki jan",
+	"options.narrator.system": "§atoki pi jan ala",
+	"options.narrator.notavailable": "§cken ala",
+	"options.narrator.off": "§cala"
+}

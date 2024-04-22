@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all_sf",
+  "textures": {
+    "all": "minecraft:block/shroomlight"
+  }
+}

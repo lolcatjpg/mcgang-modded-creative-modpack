@@ -1,0 +1,18 @@
+{
+	"options.off": "§cOFF",
+	"options.on": "§aON",
+	"options.difficulty.peaceful": "§bPeaceful",
+	"options.difficulty.easy": "§aEasy",
+	"options.difficulty.normal": "§eNormal",
+	"options.difficulty.hard": "§cHard",
+	"options.clouds.fancy": "§aFancy",
+	"options.clouds.fast": "§eFast",
+	"options.graphics.fabulous": "§dFabulous!",
+	"options.graphics.fancy": "§aFancy",
+	"options.graphics.fast": "§eFast",
+	"options.narrator.all": "§aNarrates All",
+	"options.narrator.chat": "§aNarrates Chat",
+	"options.narrator.system": "§aNarrates System",
+	"options.narrator.notavailable": "§aNot Available",
+	"options.narrator.off": "§cOFF"
+}

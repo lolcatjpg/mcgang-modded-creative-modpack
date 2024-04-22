@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/flower_pot_cross_0",
+  "textures": {
+    "plant": "minecraft:block/cherry_sapling",
+    "flowerpot": "block/flower_pot_4",
+	"dirt": "block/moss_block"
+  }
+}
