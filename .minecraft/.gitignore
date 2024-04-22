@@ -2,8 +2,6 @@
 /*
 
 # except for these
-!config/
-config/worldedit/.archive-unpack
 
 !mods/
 
@@ -13,7 +11,5 @@ resourcepacks/*
 !resourcepacks/Mizunos_16_Craft_JE_1.20.1-1.0_lc_patched/
 # https://stackoverflow.com/a/29932318
 
-!options.txt
-!servers.dat
 !.gitignore
 !icon.png
