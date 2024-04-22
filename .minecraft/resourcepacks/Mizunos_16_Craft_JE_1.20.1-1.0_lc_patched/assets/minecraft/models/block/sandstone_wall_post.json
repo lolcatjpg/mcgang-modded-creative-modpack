@@ -1,7 +1,0 @@
-{
-    "parent": "block/template_wall_post_sand",
-    "textures": {
-        "0": "block/sandstone_stair",
-		"1": "block/sandstone_top"
-    }
-}

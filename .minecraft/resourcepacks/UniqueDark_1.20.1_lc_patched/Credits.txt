@@ -1,3 +1,0 @@
-Huge thanks to BlackAuresArt(https://curseforge.com/members/blackauresart) for adding support for the following mods:
-	-Apotheosis(https://www.curseforge.com/minecraft/mc-mods/apotheosis)
-	-Dragon Survival(https://www.curseforge.com/minecraft/mc-mods/dragons-survival)

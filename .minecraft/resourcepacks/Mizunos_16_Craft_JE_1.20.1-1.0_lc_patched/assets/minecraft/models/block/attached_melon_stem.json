@@ -1,9 +1,0 @@
-{
-    "parent": "block/stem_fruit_0",
-    "textures": {
-        "0": "block/melon_stem",
-        "1": "block/attached_melon_stem",
-		"2": "block/melon_stem_0",
-		"3": "block/melon_stem_1"
-    }
-}

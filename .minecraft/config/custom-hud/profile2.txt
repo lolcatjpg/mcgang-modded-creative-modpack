@@ -1,6 +1,0 @@
-FPS: {fps}/{max_fps}
-Location: {bx} {by} {bz}
-Facing: {facing}
-
-==Section:BottomLeft==
-{real_time:HH:mm}
