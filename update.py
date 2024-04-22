@@ -1,3 +1,7 @@
 import subprocess
+from tkinter import messagebox
 
-subprocess.run('git fetch origin main && git reset --hard origin/main', shell=True)
+update = messagebox.askokcancel('update', 'Update modpack?')
+if update == True:
+    subprocess.run('git fetch origin main && git reset --hard origin/main', shell=True)
+
