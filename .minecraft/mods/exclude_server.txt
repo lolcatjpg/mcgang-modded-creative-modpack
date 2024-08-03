@@ -1,6 +1,0 @@
-betterf3
-borderlesswindow
-oculus-flywheel-compat
-oculus
-rubidium
-worldedit cui
