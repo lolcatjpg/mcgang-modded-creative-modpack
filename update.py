@@ -1,6 +1,15 @@
-import subprocess
-from tkinter import messagebox
+"""modpack updater"""
 
-update = messagebox.askokcancel('update', 'Update modpack?')
-if update == True:
-    subprocess.run('git fetch origin main && git reset --hard origin/main', shell=True)
+import zipfile
+from os import rename
+from shutil import rmtree
+
+MC_DIR = "test/"
+
+
+rmtree(f"{MC_DIR}mods.old/", ignore_errors=True)
+rename(f"{MC_DIR}mods/", f"{MC_DIR}mods.old/")
+
+with zipfile.ZipFile("test/mods.zip") as archive:
+    print(archive.namelist())
+    archive.extractall(f"{MC_DIR}mods/")
