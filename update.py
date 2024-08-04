@@ -8,13 +8,23 @@ import json
 import tomllib
 from tkinter import messagebox
 from sys import exit as sysexit
-from os import environ, chdir, getcwd
+from os import environ, chdir, getcwd, path
 
 
 # set working directory to prism launcher instance path, if found
 inst_dir = environ.get("INST_DIR", ".")
 chdir(inst_dir)
 print(f"[modpack updater] current working directory: {getcwd()}")
+
+# make config if it doesn't exist
+if not path.isfile("updater_config.toml"):
+    TOML_STR = '''
+api-url = "https://api.github.com/repos/lolcatjpg/mcgang-modded-creative-modpack/releases/latest"
+release-url = "https://github.com/lolcatjpg/mcgang-modded-creative-modpack/releases/latest/download/mods.zip"
+mc-dir = ".minecraft"  # minecraft dir without leading/trailing '/', relative to updater script
+'''
+    with open("updater_config.toml", "x", encoding="UTF8") as f:
+        f.write(TOML_STR)
 
 # load config
 with open("updater_config.toml", "rb") as f:
