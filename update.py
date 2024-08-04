@@ -2,7 +2,8 @@
 
 import zipfile
 import shutil
-import urllib.request, urllib.error
+import urllib.request
+import urllib.error
 import json
 import tomllib
 from tkinter import messagebox
