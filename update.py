@@ -7,11 +7,20 @@ import json
 import tomllib
 from tkinter import messagebox
 from sys import exit as sysexit
+from os import environ, chdir, getcwd
 
+
+# set working directory to prism launcher instance path, if found
+inst_dir = environ.get("INST_DIR", ".")
+chdir(inst_dir)
+print(f"[modpack updater] current working directory: {getcwd()}")
+
+# load config
 with open("updater_config.toml", "rb") as f:
     config = tomllib.load(f)
-    print(config)
-
+    print(f"[modpack updater] api url: {config['api-url']}")
+    print(f"[modpack updater] release url: {config['release-url']}")
+    print(f"[modpack updater] minecraft dir: {config['mc-dir']}")
 
 # check if current version is latest
 try:
@@ -34,7 +43,7 @@ except FileNotFoundError:
     current_release = "unknown (because the updater script has not been used yet)"
 
 if current_release == latest_release:
-    print(f"[modpack updater] your modpack is up to date!\n(current release: {current_release})")
+    print(f"[modpack updater] your modpack is up to date! (current release: {current_release})")
     sysexit(0)
 
 # ask if user wants to update
