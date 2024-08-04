@@ -1,15 +1,18 @@
 """modpack updater"""
 
 import zipfile
-from os import rename
-from shutil import rmtree
+import shutil
 
-MC_DIR = "test/"
+MC_DIR = "test"
 
+# delete old mods.old and rename mods to mods.old
+shutil.rmtree(f"{MC_DIR}/mods.old/", ignore_errors=True)
+shutil.move(f"{MC_DIR}/mods/", f"{MC_DIR}/mods.old/")
 
-rmtree(f"{MC_DIR}mods.old/", ignore_errors=True)
-rename(f"{MC_DIR}mods/", f"{MC_DIR}mods.old/")
-
+# extract zip file
 with zipfile.ZipFile("test/mods.zip") as archive:
     print(archive.namelist())
-    archive.extractall(f"{MC_DIR}mods/")
+    archive.extractall(f"{MC_DIR}/mods/")
+
+# move mmc_pack.json
+shutil.move(f"{MC_DIR}/mods/mmc-pack.json", "mmc-pack.json")
