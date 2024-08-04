@@ -1,0 +1,3 @@
+api-url = "https://api.github.com/repos/lolcatjpg/mcgang-modded-creative-modpack/releases/latest"
+release-url = "https://github.com/lolcatjpg/mcgang-modded-creative-modpack/releases/latest/download/mods.zip"
+mc-dir = ".minecraft"  # minecraft dir without leading/trailing '/'

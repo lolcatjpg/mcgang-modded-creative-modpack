@@ -4,14 +4,18 @@ import zipfile
 import shutil
 import urllib.request, urllib.error
 import json
+import tomllib
 from tkinter import messagebox
 from sys import exit as sysexit
 
-import updater_config
+with open("updater_config.toml", "rb") as f:
+    config = tomllib.load(f)
+    print(config)
+
 
 # check if current version is latest
 try:
-    with urllib.request.urlopen(updater_config.API_URL) as response:
+    with urllib.request.urlopen(config["api-url"]) as response:
         latest_release = json.load(response)["name"]
 except urllib.error.HTTPError:
     messagebox.showerror("URL not found", "could not check for updates because the api url could not be accessed.\n(returned HTTPError)")
@@ -43,7 +47,7 @@ if not messagebox.askokcancel("update found", UPDATE_AVAILABLE_MESSAGE):
 # download modpack
 try:
     print("[modpack updater] > downloading modpack...")
-    urllib.request.urlretrieve(updater_config.RELEASE_URL, "mods.zip")
+    urllib.request.urlretrieve(config["release-url"], "mods.zip")
     print("[modpack updater] > modpack downloaded")
 except urllib.error.HTTPError:
     messagebox.showerror("URL not found", "could not download update because the download url could not be accessed.\n(returned HTTPError)")
@@ -56,19 +60,19 @@ except urllib.error.URLError:  # should normally never happen bc at this point i
     sysexit(0)
 
 # delete old mods.old and rename mods to mods.old
-shutil.rmtree(f"{updater_config.MC_DIR}/mods.old/", ignore_errors=True)
-shutil.move(f"{updater_config.MC_DIR}/mods/", f"{updater_config.MC_DIR}/mods.old/")
-print(f"[modpack updater] > renamed {updater_config.MC_DIR}/mods to {updater_config.MC_DIR}/mods.old")
+shutil.rmtree(f"{config["mc-dir"]}/mods.old/", ignore_errors=True)
+shutil.move(f"{config["mc-dir"]}/mods/", f"{config["mc-dir"]}/mods.old/")
+print(f"[modpack updater] > renamed {config["mc-dir"]}/mods to {config["mc-dir"]}/mods.old")
 
 # extract zip file
 with zipfile.ZipFile("mods.zip") as archive:
     # print(archive.namelist())
-    archive.extractall(f"{updater_config.MC_DIR}/mods/")
-    print(f"[modpack updater] > extracted mods archive to {updater_config.MC_DIR}/mods")
+    archive.extractall(f"{config["mc-dir"]}/mods/")
+    print(f"[modpack updater] > extracted mods archive to {config["mc-dir"]}/mods")
 
 # move mmc_pack.json
-shutil.move(f"{updater_config.MC_DIR}/mods/mmc-pack.json", "mmc-pack.json")
-print(f"[modpack updater] > moved {updater_config.MC_DIR}/mods/mmc-pack.json to ./mmc-pack.json")
+shutil.move(f"{config["mc-dir"]}/mods/mmc-pack.json", "mmc-pack.json")
+print(f"[modpack updater] > moved {config["mc-dir"]}/mods/mmc-pack.json to ./mmc-pack.json")
 
 # update version file
 with open("version.txt", "w", encoding="UTF8") as file:
