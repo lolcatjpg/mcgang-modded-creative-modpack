@@ -10,8 +10,7 @@ from sys import exit as sysexit
 
 API_URL = "https://api.github.com/repos/lolcatjpg/mcgang-modded-creative-modpack/releases/latest"
 RELEASE_URL = "https://github.com/lolcatjpg/mcgang-modded-creative-modpack/releases/latest/download/mods.zip"
-MC_DIR = "test"
-
+MC_DIR = ".minecraft"  # minecraft dir without leading/trailing '/'
 
 # check if current version is latest
 try:
@@ -27,15 +26,18 @@ except urllib.error.URLError:
     print("[modpack updater] exited due to URLError")
     sysexit(0)
 
-with open("version.txt", encoding="UTF8") as file:
-    current_release = file.readline()
+try:
+    with open("version.txt", encoding="UTF8") as file:
+        current_release = file.readline()
+except FileNotFoundError:
+    current_release = "unknown (because the updater script has not been used yet)"
 
 if current_release == latest_release:
     print(f"[modpack updater] your modpack is up to date!\n(current release: {current_release})")
     sysexit(0)
 
 # ask if user wants to update
-UPDATE_AVAILABLE_MESSAGE = f"new update available: your current release is {current_release}, latest release is {latest_release}. \n\ninstall update?"
+UPDATE_AVAILABLE_MESSAGE = f"new update available: your current release is {current_release}, the latest release is {latest_release}. \n\ninstall update?"
 if not messagebox.askokcancel("update found", UPDATE_AVAILABLE_MESSAGE):
     print("[modpack updater] update cancelled by user")
     sysexit(0)
@@ -43,6 +45,7 @@ if not messagebox.askokcancel("update found", UPDATE_AVAILABLE_MESSAGE):
 
 # download modpack
 try:
+    print("[modpack updater] > downloading modpack...")
     urllib.request.urlretrieve(RELEASE_URL, "mods.zip")
     print("[modpack updater] > modpack downloaded")
 except urllib.error.HTTPError:

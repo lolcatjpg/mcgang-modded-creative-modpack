@@ -1,5 +1,6 @@
 instance.cfg
 test/
+.minecraft/
 mmc-pack.json
 mods.zip
 version.txt
