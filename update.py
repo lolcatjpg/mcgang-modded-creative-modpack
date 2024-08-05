@@ -18,11 +18,11 @@ print(f"[modpack updater] current working directory: {getcwd()}")
 
 # make config if it doesn't exist
 if not path.isfile("updater_config.toml"):
-    TOML_STR = '''
+    TOML_STR = """
 api-url = "https://api.github.com/repos/lolcatjpg/mcgang-modded-creative-modpack/releases/latest"
 release-url = "https://github.com/lolcatjpg/mcgang-modded-creative-modpack/releases/latest/download/mods.zip"
 mc-dir = ".minecraft"  # minecraft dir without leading/trailing '/', relative to updater script
-'''
+"""
     with open("updater_config.toml", "x", encoding="UTF8") as f:
         f.write(TOML_STR)
 
@@ -38,12 +38,17 @@ try:
     with urllib.request.urlopen(config["api-url"]) as response:
         latest_release = json.load(response)["name"]
 except urllib.error.HTTPError:
-    messagebox.showerror("URL not found", "could not check for updates because the api url could not be accessed.\n(returned HTTPError)")
+    messagebox.showerror(
+        "URL not found",
+        "could not check for updates because the api url could not be accessed.\n(returned HTTPError)",
+    )
     print("[modpack updater] exited due to HTTPError")
     sysexit(0)
 except urllib.error.URLError:
-    messagebox.showerror("URL could not be accessed",
-                        "could not check for updates because the api url could not be accessed.\ncheck your internet connection.\n(returned URLError)")
+    messagebox.showerror(
+        "URL could not be accessed",
+        "could not check for updates because the api url could not be accessed.\ncheck your internet connection.\n(returned URLError)",
+    )
     print("[modpack updater] exited due to URLError")
     sysexit(0)
 
@@ -54,7 +59,9 @@ except FileNotFoundError:
     current_release = "unknown (because the updater script has not been used yet)"
 
 if current_release == latest_release:
-    print(f"[modpack updater] your modpack is up to date! (current release: {current_release})")
+    print(
+        f"[modpack updater] your modpack is up to date! (current release: {current_release})"
+    )
     sysexit(0)
 
 # ask if user wants to update
@@ -70,19 +77,28 @@ try:
     urllib.request.urlretrieve(config["release-url"], "mods.zip")
     print("[modpack updater] > modpack downloaded")
 except urllib.error.HTTPError:
-    messagebox.showerror("URL not found", "could not download update because the download url could not be accessed.\n(returned HTTPError)")
+    messagebox.showerror(
+        "URL not found",
+        "could not download update because the download url could not be accessed.\n(returned HTTPError)",
+    )
     print("[modpack updater] exited due to HTTPError")
     sysexit(0)
-except urllib.error.URLError:  # should normally never happen bc at this point it could access the api url? but implementing it anyways bc who knows
-    messagebox.showerror("URL could not be accessed",
-                        "could not download update because the download url could not be accessed.\ncheck your internet connection.\n(returned URLError)")
+except (
+    urllib.error.URLError
+):  # should normally never happen bc at this point it could access the api url? but implementing it anyways bc who knows
+    messagebox.showerror(
+        "URL could not be accessed",
+        "could not download update because the download url could not be accessed.\ncheck your internet connection.\n(returned URLError)",
+    )
     print("[modpack updater] exited due to URLError")
     sysexit(0)
 
 # delete old mods.old and rename mods to mods.old
 shutil.rmtree(f"{config["mc-dir"]}/mods.old/", ignore_errors=True)
 shutil.move(f"{config["mc-dir"]}/mods/", f"{config["mc-dir"]}/mods.old/")
-print(f"[modpack updater] > renamed {config["mc-dir"]}/mods to {config["mc-dir"]}/mods.old")
+print(
+    f"[modpack updater] > renamed {config["mc-dir"]}/mods to {config["mc-dir"]}/mods.old"
+)
 
 # extract zip file
 with zipfile.ZipFile("mods.zip") as archive:
@@ -92,7 +108,9 @@ with zipfile.ZipFile("mods.zip") as archive:
 
 # move mmc_pack.json
 shutil.move(f"{config["mc-dir"]}/mods/mmc-pack.json", "mmc-pack.json")
-print(f"[modpack updater] > moved {config["mc-dir"]}/mods/mmc-pack.json to ./mmc-pack.json")
+print(
+    f"[modpack updater] > moved {config["mc-dir"]}/mods/mmc-pack.json to ./mmc-pack.json"
+)
 
 # update version file
 with open("version.txt", "w", encoding="UTF8") as file:
@@ -100,4 +118,7 @@ with open("version.txt", "w", encoding="UTF8") as file:
     print("updated version file")
 
 # notify user of success
-messagebox.showinfo("modpack updated", f"modpack successfully updated!\ncurrent version: {latest_release}")
+messagebox.showinfo(
+    "modpack updated",
+    f"modpack successfully updated!\ncurrent version: {latest_release}",
+)
