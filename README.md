@@ -1,0 +1,2 @@
+- build.sh: makes executable from installer
+- pack.sh: makes modpack archive
